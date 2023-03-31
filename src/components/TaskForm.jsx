@@ -33,21 +33,31 @@ const TaskForm = () => {
   };
 
   return (
-    <form>
+    <form onSubmit={handleSubmit} className="bg-zinc-800 max-w-sm p-4">
+      <label htmlFor="title" className="block text-sm font-bold mb-2">
+        Task:
+      </label>
       <input
         name="title"
         type="text"
         placeholder="Title"
         value={task.title}
         onChange={handleChange}
+        className="w-full p-2 rounded-md bg-zinc-600 mb-2"
       />
+      <label htmlFor="description" className="block text-sm font-bold mb-2">
+        Description:
+      </label>
       <textarea
         name="description"
         value={task.description}
         placeholder="Description"
         onChange={handleChange}
+        className="w-full p-2 rounded-md bg-zinc-600 mb-2"
       />
-      <button onClick={handleSubmit}>Save</button>
+      <button className="bg-indigo-600 px-2 py-1 rounded-sm text-sm">
+        Save
+      </button>
     </form>
   );
 };
